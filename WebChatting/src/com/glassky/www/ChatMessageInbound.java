@@ -13,8 +13,8 @@ import org.apache.catalina.websocket.WsOutbound;
 
 
 public class ChatMessageInbound extends MessageInbound {
-	private final static Map<Integer, WsOutbound> map = new HashMap<Integer, WsOutbound>(); //会话信息
-	private final static Map<Integer,String> list=new HashMap<Integer,String>();//用户列表
+	private final static Map<Integer, WsOutbound> map = new HashMap<Integer, WsOutbound>(); //浼氳瘽淇℃伅
+	private final static Map<Integer,String> list=new HashMap<Integer,String>();//鐢ㄦ埛鍒楄〃
 	
 	@Override  
     protected void onOpen(WsOutbound outbound) { 
@@ -42,7 +42,7 @@ public class ChatMessageInbound extends MessageInbound {
         Date date = new Date();  
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");  
         
-        //根据传递过来的信息的开头，判断操作
+        //鏍规嵁浼犻�掕繃鏉ョ殑淇℃伅鐨勫紑澶达紝鍒ゆ柇鎿嶄綔
         if(msg.startsWith("add:")){
         	msg=addUser(msg.substring(4));        	
         }else if(msg.startsWith("delete:")){
